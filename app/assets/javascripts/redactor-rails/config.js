@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
   var csrf_token = $('meta[name=csrf-token]').attr('content');
   var csrf_param = $('meta[name=csrf-param]').attr('content');
   var params;
@@ -6,13 +6,10 @@ $(document).ready(function() {
     params = csrf_param + "=" + encodeURIComponent(csrf_token);
   }
   $('.redactor').redactor(
-    { 
+    { "imageUpload":"/redactor_rails/pictures?" + params,
       "path":"/assets/redactor-rails",
-      "css":"style.css",
-      "lang": 'zh_cn',
-      "buttons": ['formatting', 'bold',
-      'unorderedlist', 'orderedlist', 'outdent', 'indent',
-      'image', 'table', 'link', 'alignment', 'html']
-      }
+      "css":"style.css"
+    }
   );
 });
+

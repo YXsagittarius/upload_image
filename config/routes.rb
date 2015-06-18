@@ -1,6 +1,8 @@
 UploadImage::Application.routes.draw do
   resources :images
   get '/' => 'images#index'
+  post "/redactor_rails/pictures" => 'images#create'
+  get "/redactor_rails/pictures" => 'images#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
